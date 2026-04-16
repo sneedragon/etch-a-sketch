@@ -1,10 +1,8 @@
-let gridWidth = 16;
-let gridHeigth = 16;
 const body = document.querySelector("body")
 const grid = document.querySelector(".grid");
 let mouseDown = false;
 
-function createGrid() {
+function createGrid(gridHeigth, gridWidth) {
     const gridRow = document.createElement("div");
     gridRow.classList = "grid-row";
 
@@ -18,6 +16,12 @@ function createGrid() {
     
     for (let i = 0; i < gridHeigth; i++) {
         grid.appendChild(gridRow.cloneNode(true));
+    }
+};
+
+function deleteGrid() {
+    for (child of grid.children) {
+        grid.removeChild(child)
     }
 };
 
@@ -38,6 +42,7 @@ function paint(target) {
     target.style.backgroundColor = getDarkerColors(parseColor(getComputedStyle(target).backgroundColor));
 }
 
+//Painting---------------------------------------------
 grid.addEventListener("mouseover", (event) => {
 
     let target = event.target;
@@ -64,5 +69,18 @@ body.addEventListener("mouseup", (event) => {
     mouseDown = false;
 });
 
+//Size-modification-----------------------------------
+const sizeInput = document.querySelector("#size-message");
 
-createGrid();
+sizeInput.addEventListener("keydown", (event) => {
+    if (event.key != "Enter") {
+        return;
+    };
+    let gridWidth = event.target.value;
+    let gridHeigth = event.target.value;
+    deleteGrid();
+    createGrid(gridHeigth, gridWidth);
+});
+
+//
+createGrid(16, 16);
