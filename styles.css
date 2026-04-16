@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(59, 59, 59);
+}
+
 .square {
     width: 32px;
     height: 32px;
