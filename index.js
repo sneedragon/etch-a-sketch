@@ -2,6 +2,7 @@ const body = document.querySelector("body")
 const grid = document.querySelector(".grid");
 let mouseDown = false;
 
+
 function createGrid(gridHeigth, gridWidth) {
     const gridRow = document.createElement("div");
     gridRow.classList = "grid-row";
@@ -71,6 +72,8 @@ body.addEventListener("mouseup", (event) => {
 //Size-modification-----------------------------------
 const sizeInput = document.querySelector("#size-message");
 
+const GRID_LIMIT = 100;
+
 sizeInput.addEventListener("keydown", (event) => {
     if (event.key != "Enter") {
         return;
@@ -78,7 +81,7 @@ sizeInput.addEventListener("keydown", (event) => {
     let gridWidth = event.target.value;
     let gridHeigth = event.target.value;
     deleteGrid();
-    createGrid(gridHeigth, gridWidth);
+    createGrid(Math.min(GRID_LIMIT, gridHeigth), Math.min(GRID_LIMIT, gridWidth));
     sizeInput.value = "";
 });
 
