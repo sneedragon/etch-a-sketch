@@ -37,7 +37,7 @@ grid.addEventListener("mouseover", (event) => {
     if (target.className != "square") {
         return;
     }
-    //darkenSquare(parseColor(getComputedStyle(target).backgroundColor));
+    target.style.backgroundColor = getDarkerColors(parseColor(getComputedStyle(target).backgroundColor));
     //for debug: parseColor(getComputedStyle(target).backgroundColor);
 });
 
