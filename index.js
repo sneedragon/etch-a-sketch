@@ -32,14 +32,18 @@ function getDarkerColors(colorArr) {
     return newColor;
 }
 
+function paint(target) {
+    target.style.backgroundColor = getDarkerColors(parseColor(getComputedStyle(target).backgroundColor));
+}
+
 grid.addEventListener("mouseover", (event) => {
     let target = event.target;
     if (target.className != "square") {
         return;
     }
-    target.style.backgroundColor = getDarkerColors(parseColor(getComputedStyle(target).backgroundColor));
-    //for debug: parseColor(getComputedStyle(target).backgroundColor);
+    paint(target);
 });
+
 
 
 createGrid();
