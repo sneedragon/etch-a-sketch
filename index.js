@@ -1,6 +1,7 @@
 let gridWidth = 16;
 let gridHeigth = 16;
 const grid = document.querySelector(".grid");
+let mouseDown = false;
 
 function createGrid() {
     const gridRow = document.createElement("div");
@@ -37,6 +38,19 @@ function paint(target) {
 }
 
 grid.addEventListener("mouseover", (event) => {
+
+    let target = event.target;
+    if (target.className != "square") {
+        return;
+    };
+    if (mouseDown) {
+        paint(target);
+    };   
+});
+
+grid.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+    mouseDown = true;
     let target = event.target;
     if (target.className != "square") {
         return;
@@ -44,6 +58,10 @@ grid.addEventListener("mouseover", (event) => {
     paint(target);
 });
 
+
+grid.addEventListener("mouseup", (event) => {
+    mouseDown = false;
+});
 
 
 createGrid();
