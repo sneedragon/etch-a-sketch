@@ -20,7 +20,6 @@ function createGrid() {
 };
 
 function parseColor(string) {
-
     let colorArr = string.slice(4, -1).split(",");
     return colorArr;
 };
@@ -31,9 +30,11 @@ function darkenSquare(colors) {
 
 grid.addEventListener("mouseover", (event) => {
     let target = event.target;
-    //TODO: check if class = square
-    //darkenSquare(parseColor(getComputedStyle(target.backgroundColor)))
-    //parseColor(getComputedStyle(target).backgroundColor);
+    if (target.className != "square") {
+        return;
+    }
+    //TODO: darkenSquare(parseColor(getComputedStyle(target.backgroundColor)))
+    //for debug: parseColor(getComputedStyle(target).backgroundColor);
 });
 
 
