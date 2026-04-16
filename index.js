@@ -1,5 +1,6 @@
 let gridWidth = 16;
 let gridHeigth = 16;
+const body = document.querySelector("body")
 const grid = document.querySelector(".grid");
 let mouseDown = false;
 
@@ -59,7 +60,7 @@ grid.addEventListener("mousedown", (event) => {
 });
 
 
-grid.addEventListener("mouseup", (event) => {
+body.addEventListener("mouseup", (event) => {
     mouseDown = false;
 });
 
