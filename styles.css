@@ -9,14 +9,21 @@ main {
     display: flex;
 }
 
+.grid {
+    width: 50vw;
+    aspect-ratio: 1 / 1;
+    height: auto;
+}
+
 .square {
-    width: 32px;
-    height: 32px;
+    width: 6.25%;
+    aspect-ratio: 1 / 1;;
     background-color: rgb(102, 126, 88);
     margin: 0;
 }
 
 .grid-row {
+    width: 100%;
     display: flex;
 }
 
