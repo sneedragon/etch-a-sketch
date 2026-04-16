@@ -24,8 +24,12 @@ function parseColor(string) {
     return colorArr;
 };
 
-function darkenSquare(colors) {
-    //TODO: lower values and modify
+function darkenSquare(colorArr) {
+    for (let i = 0; i < colorArr.length; i++) {
+        colorArr[i] = Math.max(10, Math.floor(colorArr[i] / 1.1));
+    }
+    let newColor = `rgb(${colorArr[0]}, ${colorArr[1]}, ${colorArr[2]})`
+    return newColor;
 }
 
 grid.addEventListener("mouseover", (event) => {
@@ -33,7 +37,7 @@ grid.addEventListener("mouseover", (event) => {
     if (target.className != "square") {
         return;
     }
-    //TODO: darkenSquare(parseColor(getComputedStyle(target.backgroundColor)))
+    //darkenSquare(parseColor(getComputedStyle(target).backgroundColor));
     //for debug: parseColor(getComputedStyle(target).backgroundColor);
 });
 
