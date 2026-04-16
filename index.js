@@ -24,7 +24,7 @@ function parseColor(string) {
     return colorArr;
 };
 
-function darkenSquare(colorArr) {
+function getDarkerColors(colorArr) {
     for (let i = 0; i < colorArr.length; i++) {
         colorArr[i] = Math.max(10, Math.floor(colorArr[i] / 1.1));
     }
