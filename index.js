@@ -26,7 +26,7 @@ function parseColor(string) {
 
 function getDarkerColors(colorArr) {
     for (let i = 0; i < colorArr.length; i++) {
-        colorArr[i] = Math.max(10, Math.floor(colorArr[i] / 1.1));
+        colorArr[i] = Math.max(10, Math.floor(colorArr[i] / 2));
     }
     let newColor = `rgb(${colorArr[0]}, ${colorArr[1]}, ${colorArr[2]})`
     return newColor;
