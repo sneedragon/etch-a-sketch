@@ -10,11 +10,11 @@ function createGrid() {
     square.classList = "square";
     gridRow.appendChild(square);
 
-    for (let i = 1; i < gridWidth; i++) {
+    for (let i = 0; i < gridWidth; i++) {
         gridRow.appendChild(square.cloneNode(true));
     }
     
-    for (let i = 1; i < gridHeigth; i++) {
+    for (let i = 0; i < gridHeigth; i++) {
         grid.appendChild(gridRow.cloneNode(true));
     }
 }
