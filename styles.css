@@ -5,6 +5,10 @@ body {
     align-items: center;
 }
 
+main {
+    display: flex;
+}
+
 .square {
     width: 32px;
     height: 32px;
