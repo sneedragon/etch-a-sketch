@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgb(59, 59, 59);
+    align-items: center;
 }
 
 .square {
