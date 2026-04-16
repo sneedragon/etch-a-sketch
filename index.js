@@ -8,9 +8,10 @@ function createGrid(gridHeigth, gridWidth) {
 
     const square = document.createElement("div");
     square.classList = "square";
+    square.style.width = (100 / gridWidth) + "%"
     gridRow.appendChild(square);
 
-    for (let i = 0; i < gridWidth; i++) {
+    for (let i = 1; i < gridWidth; i++) {
         gridRow.appendChild(square.cloneNode(true));
     }
     
@@ -78,6 +79,7 @@ sizeInput.addEventListener("keydown", (event) => {
     let gridHeigth = event.target.value;
     deleteGrid();
     createGrid(gridHeigth, gridWidth);
+    sizeInput.value = "";
 });
 
 //
