@@ -20,9 +20,7 @@ function createGrid(gridHeigth, gridWidth) {
 };
 
 function deleteGrid() {
-    for (child of grid.children) {
-        grid.removeChild(child)
-    }
+    grid.replaceChildren();
 };
 
 function parseColor(string) {
