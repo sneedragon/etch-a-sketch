@@ -3,14 +3,19 @@ let gridHeigth = 16;
 const grid = document.querySelector(".grid");
 
 function createGrid() {
+    const gridRow = document.createElement("div");
+    gridRow.classList = "grid-row";
+
     const square = document.createElement("div");
     square.classList = "square";
-    grid.appendChild(square);
-    for (let i = 1; i < gridHeigth; i++) {
-        for (let j = 1; j < gridWidth; j++) {
-            grid.appendChild(square.cloneNode(true))
-        };
-    };
-};
+    gridRow.appendChild(square);
 
+    for (let i = 1; i < gridWidth; i++) {
+        gridRow.appendChild(square.cloneNode(true));
+    }
+    
+    for (let i = 1; i < gridHeigth; i++) {
+        grid.appendChild(gridRow.cloneNode(true));
+    }
+}
 createGrid();
