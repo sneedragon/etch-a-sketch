@@ -17,5 +17,12 @@ function createGrid() {
     for (let i = 0; i < gridHeigth; i++) {
         grid.appendChild(gridRow.cloneNode(true));
     }
-}
+};
+
+grid.addEventListener("mouseover", (event) => {
+    let target = event.target;
+    console.log(target);
+});
+
+
 createGrid();

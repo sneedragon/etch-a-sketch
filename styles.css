@@ -1,10 +1,11 @@
 .square {
-    width: 64px;
-    height: 64px;
-    background-color: yellow;
-    margin: 2px;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(102, 126, 88);
+    margin: 1px;
 }
 
 .grid-row {
     display: flex;
 }
+
